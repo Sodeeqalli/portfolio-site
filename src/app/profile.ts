@@ -2,7 +2,6 @@ export const basics = {
   fullName: "Sodeeq Alli",
   location: "Calgary, Alberta, Canada",
   email: "sodeeqalli@gmail.com",
-  age: "21",
 };
 
 export const primaryRoles = [

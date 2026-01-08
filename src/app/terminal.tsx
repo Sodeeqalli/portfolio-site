@@ -671,10 +671,6 @@ export default function Terminal({ mode }: { mode: Mode }) {
             <div className={styles.value}>{basics.location}</div>
           </div>
           <div>
-            <div className={styles.label}>age</div>
-            <div className={styles.value}>{basics.age}</div>
-          </div>
-          <div>
             <div className={styles.label}>contact</div>
             <div className={styles.value}>
               <a href={`mailto:${basics.email}`}>{basics.email}</a>
