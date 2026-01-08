@@ -10,7 +10,7 @@ const terminalMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Sodeeq Alli — Terminal Portfolio",
+  title: "Sodeeq Alli ",
   description:
     "Soft terminal portfolio for Sodeeq Alli: software engineer, cloud architect, and mobile developer.",
 };
