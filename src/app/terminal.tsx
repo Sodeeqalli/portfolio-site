@@ -985,7 +985,6 @@ export default function Terminal({ mode }: { mode: Mode }) {
             </div>
           </>
         );
-      case "skills":
       case "about":
         return (
           <ul>
