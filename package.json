@@ -6,7 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "preview": "wrangler pages dev out",
+    "deploy": "wrangler pages deploy out"
   },
   "dependencies": {
     "next": "16.0.10",

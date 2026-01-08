@@ -1,27 +1,16 @@
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
-html,
-body {
-  max-width: 100vw;
-  overflow-x: hidden;
-}
-
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  --bg: #050706;
+  --panel: #0b0d0c;
+  --panel-bright: #111312;
+  --text: #e7e7e7;
+  --muted: #a9a9a9;
+  --faint: #6b6b6b;
+  --accent: #f0c674;
+  --accent-2: #7aa4ff;
+  --line: #1a1a1a;
+  --border: #1f1f1f;
+  --shadow: 0 28px 68px rgba(0, 0, 0, 0.55);
+  color-scheme: dark;
 }
 
 * {
@@ -30,13 +19,45 @@ body {
   margin: 0;
 }
 
+body {
+  color: var(--text);
+  background:
+    radial-gradient(circle at 18% 18%, rgba(80, 80, 80, 0.08), transparent 45%),
+    radial-gradient(circle at 82% 12%, rgba(240, 198, 116, 0.08), transparent 40%),
+    radial-gradient(circle at 40% 80%, rgba(90, 90, 90, 0.08), transparent 38%),
+    var(--bg);
+  font-family: var(--font-terminal), "IBM Plex Mono", "SFMono-Regular", Menlo,
+    monospace;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  min-height: 100vh;
+  padding: 36px 18px 48px;
+  line-height: 1.6;
+  font-size: 16px;
+  letter-spacing: 0.01em;
+}
+
 a {
   color: inherit;
   text-decoration: none;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
+button,
+input,
+textarea {
+  font: inherit;
+  color: inherit;
+  background: transparent;
+  border: none;
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+::selection {
+  background: rgba(240, 198, 116, 0.2);
+  color: var(--text);
 }
