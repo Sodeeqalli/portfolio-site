@@ -8,7 +8,8 @@
     "start": "next start",
     "lint": "eslint",
     "preview": "wrangler pages dev out",
-    "deploy": "wrangler pages deploy out"
+    "deploy": "wrangler deploy",
+    "deploy:pages": "wrangler pages deploy out"
   },
   "dependencies": {
     "next": "16.0.10",
