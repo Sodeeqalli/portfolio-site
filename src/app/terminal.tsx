@@ -180,7 +180,7 @@ const projectCategoryKeywords: Record<string, string[]> = {
 };
 
 const getProjectCategory = (project: (typeof projects)[number]) => {
-  if ((project as any).category === "frontend") return "frontend";
+  if ("category" in project && project.category === "frontend") return "frontend";
   const text = `${project.name} ${project.stack}`.toLowerCase();
   if (text.includes("hospital management")) {
     return "console";

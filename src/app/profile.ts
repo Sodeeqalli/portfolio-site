@@ -2,6 +2,7 @@ export const basics = {
   fullName: "Sodeeq Alli",
   location: "Calgary, Alberta, Canada",
   email: "sodeeqalli@gmail.com",
+  availability: "Available for 2027 new-graduate roles",
 };
 
 export const primaryRoles = [
@@ -19,8 +20,8 @@ export const onlinePresence = [
 ];
 
 export const summary = [
-  "I am a Software Engineer and Cloud Solutions Engineer with hands-on experience building web, mobile, and cloud-native systems. I specialize in backend development, serverless architectures, and mobile applications using Flutter and Firebase, with strong experience deploying scalable solutions on AWS.",
-  "I have worked in startup and academic environments, contributed to production-ready applications, and built end-to-end systems that integrate APIs, databases, cloud services, and automation. I enjoy solving real-world problems, shipping reliable software, and continuously improving systems through clean architecture and thoughtful design.",
+  "Backend-oriented software engineer working across cloud systems, applied machine learning, software quality and enterprise architecture.",
+  "Currently completing an MEng in Software Engineering at the University of Calgary, with experience spanning production backend work, IT operations, teaching, mentoring and mobile development.",
 ];
 
 export const education = [
@@ -55,65 +56,60 @@ export const coursework = [
 
 export const experiences = [
   {
+    role: "Graduate Assistant Teaching — ENSF 337",
+    org: "University of Calgary",
+    period: "Fall 2026",
+    summary: "Accepted a one-quarter graduate teaching appointment supporting programming-fundamentals labs, preparation and assignment grading.",
+    bullets: ["Programming fundamentals", "Teaching", "Assessment"],
+  },
+  {
+    role: "Enterprise Architecture Specialist",
+    org: "University of Calgary",
+    period: "March 2026 – August 2026",
+    summary: "Refined business-capability definitions, mapped capabilities to enterprise applications, developed Visio, taxonomy and process artefacts, and presented CAUDIT-aligned recommendations.",
+    bullets: ["Enterprise architecture", "CAUDIT", "Capability mapping", "Microsoft Visio"],
+  },
+  {
+    role: "AFC Computer Lab Supervisor",
+    org: "University of Calgary · Faculty of Arts IT",
+    period: "January 2026 – Present",
+    summary: "Supervises university computer-lab operations and provides on-site technical and user support for the Faculty of Arts.",
+    bullets: ["IT operations", "Technical support", "User support"],
+  },
+  {
     role: "Software Engineer",
-    org: "KDNPlus — Remote",
+    org: "NSBE UCalgary",
+    period: "September 2025 – Present",
+    summary: "Builds and maintains software supporting chapter platforms, initiatives and events while translating non-technical requirements into technical work.",
+    bullets: ["Python", "REST APIs", "Software architecture", "Documentation"],
+  },
+  {
+    role: "Python Mentor",
+    org: "Schulich Ignite · University of Calgary",
+    period: "September 2025 – December 2025",
+    summary: "Mentored learners through Python fundamentals, debugging, functions, control flow and structured problem solving.",
+    bullets: ["Python", "Mentoring", "Technical communication"],
+  },
+  {
+    role: "Software Engineer",
+    org: "KDN+ · Remote",
     period: "July 2024 – October 2024",
-    summary:
-      "Worked as a Software Engineer in a startup environment, contributing to backend systems and cloud-based services used in production.",
-    bullets: [
-      "Designed and implemented RESTful APIs and backend services to support application features and integrations.",
-      "Worked with AWS services such as S3, DynamoDB, and Cognito to build secure, scalable, cloud-native solutions focused on authentication, data storage, and access control.",
-      "Used Python for backend logic, data preprocessing, and service integration to ensure reliability and maintainability.",
-      "Collaborated with engineers to debug issues, improve system performance, and deliver features aligned with business requirements.",
-    ],
+    summary: "Designed REST APIs and backend services and used AWS services for application authentication, storage, access control and integrations.",
+    bullets: ["Python", "AWS Lambda", "S3", "DynamoDB", "Cognito", "REST APIs"],
   },
   {
     role: "Mobile Application Developer",
-    org: "Google Developer Students’ Club (GDSC) — Babcock University",
-    period: "January 2024 – May 2024",
-    summary:
-      "Contributed as a Mobile Application Developer on real-world mobile applications used by students.",
-    bullets: [
-      "Implemented StudyStats onboarding and mobile features using Flutter and Dart with a focus on performance, clean UI, and usability.",
-      "Integrated Firebase services, collaborated with developers on design, testing, and refinement before App Store and Google Play release.",
-      "Supported junior developers, participated in code reviews, and improved overall user experience.",
-    ],
-  },
-  {
-    role: "Software Engineer",
-    org: "NSBE UCalgary (National Society of Black Engineers) — University of Calgary",
-    period: "September 2025 – Present",
-    summary:
-      "Serve as a Software Engineer for the NSBE UCalgary chapter, contributing technical skills to support chapter initiatives, platforms, and events.",
-    bullets: [
-      "Design, build, and maintain software solutions that support organizational needs.",
-      "Develop features, improve existing systems, and collaborate with non-technical stakeholders to translate requirements into functional software.",
-      "Emphasize teamwork, leadership, and applying software engineering principles in a community-driven environment.",
-    ],
-  },
-  {
-    role: "Python Mentor (Volunteer)",
-    org: "Schulich Ignite — University of Calgary",
-    period: "September 2025 – Present",
-    summary:
-      "Volunteer Python Mentor supporting learners building foundational programming skills.",
-    bullets: [
-      "Mentor students in Python fundamentals including variables, control flow, functions, problem-solving, and debugging.",
-      "Guide learners through hands-on exercises, clarify difficult concepts, and adapt explanations to different learning styles.",
-      "Strengthened ability to explain technical concepts clearly in a structured educational setting.",
-    ],
+    org: "GDSC / GDG on Campus · Babcock University",
+    period: "January 2024 – July 2024",
+    summary: "Developed StudyStats onboarding and mobile features, integrated Firebase and Riverpod, supported junior developers and participated in testing and code review.",
+    bullets: ["Flutter", "Dart", "Firebase", "Riverpod"],
   },
   {
     role: "Service Intern",
-    org: "UfitFly — Oluyole, Oyo State, Nigeria",
+    org: "UfitFly · Oyo State, Nigeria",
     period: "January 2023 – July 2023",
-    summary:
-      "Worked as a Service Intern supporting operational and administrative processes.",
-    bullets: [
-      "Managed user data and internal documentation to ensure smooth application procedures.",
-      "Handled daily email correspondence, organizing communications and responses.",
-      "Researched travel and operational processes, presenting findings to support departmental objectives.",
-    ],
+    summary: "Managed user data and internal documentation, organized daily correspondence and researched travel and operational processes.",
+    bullets: ["Data administration", "Research", "CRM", "Operations"],
   },
 ];
 
@@ -133,6 +129,11 @@ const monthIndex: Record<string, number> = {
 };
 
 const parseStartPeriod = (period: string) => {
+  const seasonMatch = period.match(/(winter|spring|summer|fall)\s+(\d{4})/i);
+  if (seasonMatch) {
+    const seasonMonth: Record<string, number> = { winter: 1, spring: 4, summer: 7, fall: 9 };
+    return Number(seasonMatch[2]) * 12 + seasonMonth[seasonMatch[1].toLowerCase()];
+  }
   const match = period.match(/([A-Za-z]+)\s+(\d{4})/);
   if (!match) return 0;
   const month = monthIndex[match[1].toLowerCase()] ?? 1;
@@ -145,6 +146,13 @@ export const experiencesSorted = [...experiences].sort(
 );
 
 export const projects = [
+  {
+    name: "Polyp Segmentation Model Comparison",
+    duration: "April 2026",
+    stack: "PyTorch, U-Net++, ResNet34, SLURM",
+    summary: "Primary contributor across implementation, experimentation, evaluation and delivery in a three-person U-Net comparison. Best Dice score: 0.9025.",
+    link: "https://github.com/Sodeeqalli/ensf617-polyp-segmentation",
+  },
   {
     name: "Automating Sports Data Analytics with AWS",
     duration: "March 2025",
@@ -446,6 +454,13 @@ export const skillGroups = [
 ];
 
 export const certifications = [
+  {
+    name: "AWS Certified AI Practitioner",
+    issuer: "Amazon Web Services (AWS)",
+    issued: "April 2026",
+    expires: "April 2029",
+    skills: "Artificial Intelligence, Machine Learning, Generative AI, AWS",
+  },
   {
     name: "Generative AI Fundamentals",
     issuer: "Databricks",

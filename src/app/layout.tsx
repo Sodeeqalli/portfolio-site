@@ -1,18 +1,10 @@
 import type { Metadata } from "next";
-import { JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 
-const terminalMono = JetBrains_Mono({
-  variable: "--font-terminal",
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-  display: "swap",
-});
-
 export const metadata: Metadata = {
-  title: "Sodeeq Alli ",
+  title: "Sodeeq Alli — Software Engineer",
   description:
-    "Soft terminal portfolio for Sodeeq Alli: software engineer, cloud architect, and mobile developer.",
+    "Portfolio of Sodeeq Alli, a backend-oriented software engineer working across cloud systems, applied machine learning and enterprise architecture.",
 };
 
 export default function RootLayout({
@@ -22,7 +14,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={terminalMono.variable}>{children}</body>
+      <body>{children}</body>
     </html>
   );
 }
