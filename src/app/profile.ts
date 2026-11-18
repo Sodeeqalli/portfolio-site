@@ -147,6 +147,15 @@ export const experiencesSorted = [...experiences].sort(
 
 export const projects = [
   {
+    name: "Common Ground",
+    duration: "Hack the Change 2026",
+    stack:
+      "React, TypeScript, Vinext, Vite, Cloudflare Workers, Cloudflare D1",
+    summary:
+      "Built a calm, strategic multiplayer game where autistic adults coordinate paired robot missions and restore a persistent shared world. Implemented deterministic server-side route resolution, pressure-plate dependencies, conflict-safe state updates, and durable team progress across sessions.",
+    link: "https://devpost.com/software/dino-devs-common-ground",
+  },
+  {
     name: "Polyp Segmentation Model Comparison",
     duration: "April 2026",
     stack: "PyTorch, U-Net++, ResNet34, SLURM",
